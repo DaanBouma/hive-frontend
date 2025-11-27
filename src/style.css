@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "BigNoodleTitling";
+  src: url("./assets/big_noodle_titling.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body,html {
+  background-color: #F4E9D4;
+  overflow: hidden;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "BigNoodleTitling", sans-serif;
+}
+
+.App_logo {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+}
+
+h1 {
+  font-family: "BigNoodleTitling", sans-serif;
+  color: #F6C66D;
+  font-size: 40px;
+}
