@@ -1,0 +1,25 @@
+:root {
+  /* V1 */
+  /* --body: #E1BD74;
+  --background: #30221F;
+  --primary-text: #EFD197;
+  --secondary-text: #30221F;
+  --primary: #C47029;
+  --secondary: #3A2B28; */
+
+  /* V2 */
+  /* --body: #30221F;
+  --background: #E1BD74;
+  --primary-text: #30221F;
+  --secondary-text: #F4E0B8;
+  --primary: #C47029;
+  --secondary: #E3C381; */
+
+    /* V2 */
+  --body: #F3EDE6;
+  --background: #496255;
+  --primary-text: #EFD197;
+  --secondary-text: #496255;
+  --primary: #C47029;
+  --secondary: #5f7267;
+}
