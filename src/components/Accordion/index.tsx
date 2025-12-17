@@ -3,6 +3,7 @@ import styles from "./styles.module.css"
 import getClassNameFactory from "../../lib/get-class-name-factory"
 import { ChevronUp } from "lucide-react"
 import type { Field } from "../../types/form"
+
 const getClassName = getClassNameFactory("Accordion", styles)
 
 type AccordionProps = {
@@ -39,7 +40,11 @@ export const Accordion = ({
           {fields.map((field, index) => (
             <div key={index} className={getClassName("field")}>
               <p>{field.label}</p>
-              <input type={field.type} disabled={disabled} />
+              <input
+                type={field.type}
+                placeholder={field.placeholder ?? "ed"}
+                disabled={disabled}
+              />
             </div>
           ))}
         </div>

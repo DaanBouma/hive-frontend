@@ -14,14 +14,8 @@ function App() {
         <Route path="/hives" element={<HiveList />} />
         <Route path="/hives/:hiveId" element={<HiveDetail />} />
         <Route path="/hives/:hiveId/inspections/new" element={<InspectionForm />} />
-        <Route
-          path="/hives/:hiveId/inspections/:inspectionId"
-          element={<InspectionView />}
-        />
-        <Route
-          path="/hives/:hiveId/inspections/:inspectionId/edit"
-          element={<InspectionForm />}
-        />
+        <Route path="/hives/:hiveId/inspections/:inspectionId/:inspectionNumber" element={<InspectionView />}/>
+        <Route path="/hives/:hiveId/inspections/:inspectionId/:inspectionNumber/edit" element={<InspectionForm />}/>
       </Routes>
     </BrowserRouter>
   )
