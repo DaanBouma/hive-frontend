@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { HiveList, HiveDetail} from "./pages/Hives"
 import {
-  InspectionList,
   InspectionView,
   InspectionForm
 } from "./pages/Inspections"
@@ -11,10 +10,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<HiveList />}/>
         <Route path="/hives" element={<HiveList />} />
         <Route path="/hives/:hiveId" element={<HiveDetail />} />
-
-        <Route path="/hives/:hiveId/inspections" element={<InspectionList />} />
         <Route path="/hives/:hiveId/inspections/new" element={<InspectionForm />} />
         <Route
           path="/hives/:hiveId/inspections/:inspectionId"

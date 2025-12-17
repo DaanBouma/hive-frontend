@@ -1,37 +1,32 @@
 import { Card, Header } from "../../components"
+import { useEffect, useState } from "react"
+import type { Hive, ApiResponse } from "../../types/api"
 
 function HiveList() {
+  const [hives, setHives] = useState<Hive[]>([])
+
+  useEffect(() => {
+    fetch("/api/hives")
+      .then(res => res.json())
+      .then((json: ApiResponse<Hive[]>) => setHives(json.data))
+  }, [])
+
   return (
     <div className="App">
       <Header title="Bijen horen erbij" description="Kies jouw bijenkast" />
       <div className="Body">
-        <Card
-          name="Bijenkast 1"
-          subname="Laatste inspectie"
-          date="20/05/2025 20:00"
-          buttons={[
-            { type: "primary", text: "Bekijk kast", href: "/hives/1" },
-            { type: "secondary", text: "Nieuwe inspectie", href: "/hives/1/inspections/new" }
-          ]}
-        />
-        <Card
-          name="Bijenkast 2"
-          subname="Laatste inspectie"
-          date="20/05/2025 20:00"
-          buttons={[
-            { type: "primary", text: "Bekijk kast", href: "/hives/2" },
-            { type: "secondary", text: "Nieuwe inspectie", href: "/hives/1/inspections/new" }
-          ]}
-        />
-        <Card
-          name="Bijenkast 3"
-          subname="Laatste inspectie"
-          date="20/05/2025 20:00"
-          buttons={[
-            { type: "primary", text: "Bekijk kast", href: "/hives/3" },
-            { type: "secondary", text: "Nieuwe inspectie", href: "/hives/1/inspections/new" }
-          ]}
-        />
+        {hives.map(hive => (
+          <Card
+            key={hive.id}
+            name={hive.name}
+            subname="Aangemaakt"
+            date={new Date(hive.created_at).toLocaleString()}
+            buttons={[
+              { type: "primary", text: "Bekijk kast", href: `/hives/${hive.id}` },
+              { type: "secondary", text: "Nieuwe inspectie", href: `/hives/${hive.id}/inspections/new` }
+            ]}
+          />
+        ))}
       </div>
     </div>
   )
