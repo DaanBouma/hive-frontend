@@ -38,3 +38,24 @@
   padding: 12px 23px;
 
 }
+
+.Header-back-button {
+  background-color: var(--secondary);
+  border-radius: 10px;
+  color: var(--primary-text);
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  border: none;
+  padding: 12px 22px;
+  font-size: 16px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+@media (max-width: 768px) {
+  .Header-back-button {
+    padding: 16px 28px;
+    font-size: 18px;
+    min-width: 48px;
+    min-height: 48px;
+  }
+}
