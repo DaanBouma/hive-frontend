@@ -11,7 +11,7 @@ function HiveDetail() {
         <Card
           name="Inspectie #137"
           subname="Uitgevoerd op"
-          date="20/05/2025 20:00"
+          showCollapsible={false}
           buttons={[
             {
               type: "primary",
