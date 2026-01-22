@@ -1,5 +1,6 @@
 import styles from './styles.module.css'
 import getClassNameFactory from '../../lib/get-class-name-factory'
+import Demo  from './collapsible'
 const getClassName = getClassNameFactory('Card', styles)
 
 
@@ -25,6 +26,8 @@ export const Card = ({
         <p className={getClassName("nav-subtitle")}>{subname}</p>
         <p className={getClassName("nav-date")}>{date}</p>
       </div>
+
+      <Demo />
 
       <div className={getClassName("footer")}>
         {buttons?.map((btn, index) => (
