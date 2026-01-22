@@ -19,7 +19,7 @@ function HiveList() {
           <Card
             key={hive.id}
             name={hive.name}
-            subname="Aangemaakt"
+            subname="Aangemaakt op"
             date={new Date(hive.created_at).toLocaleString()}
             buttons={[
               { type: "primary", text: "Bekijk kast", href: `/hives/${hive.id}` },

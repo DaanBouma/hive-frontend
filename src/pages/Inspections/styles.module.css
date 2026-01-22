@@ -1,0 +1,13 @@
+.InspectionForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.saveButton {
+  background-color: var(--primary);
+  border-radius: 10px;
+  color: var(--primary-text);
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  border: none;
+  padding: 12px 34px;
+}

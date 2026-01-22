@@ -1,33 +1,53 @@
 import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
 import { Card, Header } from "../../components"
+import type { ApiResponse } from "../../types/api"
+
+type Inspection = {
+  id: number
+  hive_id: number
+  created_at: string
+  updated_at: string
+}
 
 function HiveDetail() {
   const { hiveId } = useParams()
+  const [inspections, setInspections] = useState<Inspection[]>([])
+
+  useEffect(() => {
+    if (hiveId) {
+      fetch(`/api/hives/${hiveId}/inspections`)
+        .then(res => res.json())
+        .then((json: ApiResponse<Inspection[]>) => setInspections(json.data))
+    }
+  }, [hiveId])
 
   return (
     <div className="App">
       <Header title={`Bijenkast ${hiveId}`} description="Inspecties" />
       <div className="Body">
-        <Card
-          name="Inspectie #137"
-          subname="Uitgevoerd op"
-          date="20/05/2025 20:00"
-          buttons={[
-            {
-              type: "primary",
-              text: "Bekijk",
-              href: `/hives/${hiveId}/inspections/137`
-            },
-            {
-              type: "secondary",
-              text: "Bewerk",
-              href: `/hives/${hiveId}/inspections/137/edit`
-            }
-          ]}
-        />
+        {inspections.map(inspection => (
+          <Card
+            key={inspection.id}
+            name={`inspectie ${inspection.id}`}
+            subname="Uitgevoerd op"
+            date={new Date(inspection.created_at).toLocaleString()}
+            buttons={[
+              {
+                type: "primary",
+                text: "Bekijk",
+                href: `/hives/${hiveId}/inspections/${inspection.id}`
+              },
+              {
+                type: "secondary",
+                text: "Bewerk",
+                href: `/hives/${hiveId}/inspections/${inspection.id}/edit`
+              }
+            ]}
+          />
+        ))}
       </div>
     </div>
   )
 }
-
 export default HiveDetail

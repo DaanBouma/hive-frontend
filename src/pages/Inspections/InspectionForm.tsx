@@ -54,7 +54,7 @@ function InspectionForm() {
     <div className="App">
       <Header
         title={`Inspectie #${inspectionId}`}
-        description="Uitgevoerd op 20/05/2025 20:00"
+        description="Bewerk inspectie"
       />
 
       <div className="Body">

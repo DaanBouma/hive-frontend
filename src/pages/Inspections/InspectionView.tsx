@@ -1,6 +1,15 @@
 import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
 import { Header, Accordion } from "../../components"
 import type { Field } from "../../types/form"
+import type { ApiResponse } from "../../types/api"
+
+type Inspection = {
+  id: number
+  hive_id: number
+  created_at: string
+  updated_at: string
+}
 
 const SECTIONS: {
   title: string
@@ -49,12 +58,21 @@ const SECTIONS: {
 
 function InspectionView() {
   const { inspectionId } = useParams()
+  const [inspection, setInspection] = useState<Inspection | null>(null)
+
+  useEffect(() => {
+    if (inspectionId) {
+      fetch(`/api/inspections/${inspectionId}`)
+        .then(res => res.json())
+        .then((json: ApiResponse<Inspection>) => setInspection(json.data))
+    }
+  }, [inspectionId])
 
   return (
     <div className="App">
       <Header
         title={`Inspectie #${inspectionId}`}
-        description="Uitgevoerd op 20/05/2025 20:00"
+        description={inspection ? `Uitgevoerd op ${new Date(inspection.created_at).toLocaleString()}` : "Uitgevoerd op"}
       />
 
       <div className="Body">
