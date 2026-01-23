@@ -20,7 +20,7 @@ function HiveList() {
             key={hive.id}
             name={hive.name}
             subname="Aangemaakt op"
-            date={new Date(hive.created_at).toLocaleString()}
+            // date={new Date(hive.created_at).toLocaleString()}
             temperature={hive.temperature}
             humidity={hive.humidity}
             created_at={hive.created_at}

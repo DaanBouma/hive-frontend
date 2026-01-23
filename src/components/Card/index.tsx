@@ -41,14 +41,13 @@ export const Card = ({
         <p>
           <strong>Bijgewerkt:</strong>&nbsp;{formatDate(updated_at)}
         </p>
+        <p>
+          <strong>Temperatuur:</strong>&nbsp;{temperature !== null ? temperature : "—"}°C
+        </p>
+        <p>
+          <strong>Vochtigheid:</strong>&nbsp;{humidity !== null ? humidity : "—"}%
+        </p>
       </div>
-
-      {showCollapsible && (
-        <Demo
-          temperature={temperature}
-          humidity={humidity}
-        />
-      )}
 
       <div className={getClassName("footer")}>
         {buttons?.map((btn, index) => (

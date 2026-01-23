@@ -31,7 +31,8 @@ function HiveDetail() {
             key={inspection.id}
             name={`inspectie ${inspection.id}`}
             subname="Uitgevoerd op"
-            date={new Date(inspection.created_at).toLocaleString()}
+            created_at={inspection.created_at}
+            updated_at={inspection.updated_at}
             buttons={[
               {
                 type: "primary",
