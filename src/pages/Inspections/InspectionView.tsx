@@ -72,7 +72,7 @@ function InspectionView() {
     <div className="App">
       <Header
         title={`Inspectie #${inspectionId}`}
-        description={inspection ? `Uitgevoerd op ${new Date(inspection.created_at).toLocaleString()}` : "Uitgevoerd op"}
+        description={inspection ? `Uitgevoerd op ${inspection.created_at}` : "Uitgevoerd op"}
       />
 
       <div className="Body">
