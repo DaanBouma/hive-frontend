@@ -1,10 +1,9 @@
 import { Card, Header } from "../../components"
 import { useEffect, useState } from "react"
 import type { Hive, ApiResponse } from "../../types/api"
-import styles from "./styles.module.css"
-import getClassNameFactory from "../../lib/get-class-name-factory"
-
-const getClassName = getClassNameFactory("Hives", styles)
+import styles from './styles.module.css'
+import getClassNameFactory from '../../lib/get-class-name-factory'
+const getClassName = getClassNameFactory('Hives', styles)
 
 function HiveList() {
   const [hives, setHives] = useState<Hive[]>([])
@@ -53,13 +52,13 @@ function HiveList() {
   return (
     <div className="App">
       <Header title="Bijen horen erbij" description="Kies jouw bijenkast" />
+
       <div className="Body">
         {/* Create hive UI */}
         {!showForm && (
           <button
-            className={getClassName('NewHiveButton')}
-            onClick={() => setShowForm(true)}
-          >
+          className={getClassName('NewHiveButton')}
+          onClick={() => setShowForm(true)}>
             Nieuwe bijenkast
           </button>
         )}
