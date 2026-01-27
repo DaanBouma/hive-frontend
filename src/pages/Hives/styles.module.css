@@ -36,7 +36,7 @@
 .Hives-CreateHiveForm input {
   width: 100%;
   height: 35px;
-  background-color: var(--body);
+  background-color: #b7763973;
   border: 2px solid var(--secondary-text);
   border-radius: 2px;
   font-size: 16px;
@@ -53,8 +53,13 @@
 .Hives-NewHiveInput {
   padding: 10px;
   font-size: 16px;
-  border: 1px solid var(--secondary-text);
+  border: 1px solid var(--secondary);
   border-radius: 8px;
   width: 100%;
   box-sizing: border-box;
+}
+.Hives-NewHiveInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 5px var(--primary);
 }
