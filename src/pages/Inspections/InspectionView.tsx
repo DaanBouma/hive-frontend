@@ -17,41 +17,80 @@ const SECTIONS: {
   fields: Field[]
 }[] = [
     {
-      title: "Inwintering",
+      title: "Overige notities",
       disabled: true,
       fields: [
-        { type: "text", label: "Ras" },
-        { type: "text", label: "Type" }
+        { type: "text", label: "" },
       ]
     },
     {
-      title: "HK-Ramen",
+      title: "Gedrag volk",
       disabled: true,
       fields: [
-        { type: "number", label: "Aantal" }
+        { type: "text", label: "Gedrag" },
       ]
     },
     {
-      title: "BK-Ramen",
-      disabled: true,
+      title: "Koningin gezien",
+      disabled: true,  
       fields: [
-        { type: "number", label: "Aantal" }
+        { type: "text", label: "" },
       ]
     },
     {
-      title: "Jonge Koningin",
+      title: "Aantal bakken",
       disabled: true,
       fields: [
-        { type: "text", label: "Ras" },
-        { type: "text", label: "Leeftijd" }
+        { type: "number", label: "Aantal" },
       ]
     },
     {
-      title: "Oude Koningin",
+      title: "Ramen bezet",
       disabled: true,
       fields: [
-        { type: "text", label: "Ras" },
-        { type: "text", label: "Reden" }
+        { type: "number", label: "Aantal" },
+      ]
+    },
+    {
+      title: "BRIAS",
+      disabled: true,
+      fields: [
+        { type: "text", label: "j/n" },
+      ]
+    },
+    {
+      title: "BRIAS gezond",
+      disabled: true,
+      fields: [
+        { type: "text", label: "j/n" },
+      ]
+    },
+    {
+      title: "Belegde zwermcellen",
+      disabled: true,
+      fields: [
+        { type: "text", label: "j/n" },
+      ]
+    },
+    {
+      title: "Voorraad voer",
+      disabled: true,
+      fields: [
+        { type: "number", label: "" },
+      ]
+    },
+    {
+      title: "Stuifmeel",
+      disabled: true,
+      fields: [
+        { type: "text", label: "j/n" },
+      ]
+    },
+    {
+      title: "Mijtval",
+      disabled: true,
+      fields: [
+        { type: "number", label: "aantal" },
       ]
     }
   ]
